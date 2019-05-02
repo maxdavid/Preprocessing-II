@@ -1,1 +1,17 @@
-// Mixins in here
+.btn-common {
+  font-size: 2rem;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-contained(@bg-color: @button-bg) {
+  .btn-common();
+  background-color: @bg-color;
+  color: white;
+
+  &:hover {
+    background-color: lighten(@bg-color, 5%);
+  }
+}
